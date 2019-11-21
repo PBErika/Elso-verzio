@@ -1,0 +1,33 @@
+
+html {
+  font-size: 100%;
+}
+.hir-doboz {
+}
+.hir-doboz .hir-cim {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.5em 0 0.5em 2em;
+  position: relative;
+}
+.hir-doboz .hir-cim::before {
+  content: '+';
+  font-weight: bold;
+  border: 1px solid #000;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: -2em;
+}
+.hir-doboz .hir-cim.opened::before {
+  content: '-';
+}
+.hir-doboz .hir-datum-szerzo {
+  margin: 0 0 0.2em 0;
+}
+.hir-doboz .hir-szoveg-doboz {
+  margin: 0.2em 0;
+  display: none;
+}

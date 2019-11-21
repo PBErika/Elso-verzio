@@ -1,0 +1,19 @@
+<?php
+
+class Hireklista_Controller
+{
+	public $baseName = 'hireklista';  //meghatározni, hogy melyik oldalon vagyunk
+	public function main(array $vars) // a router által továbbított paramétereket kapja
+	{
+		$hireklistaModel = new Hireklista_Model;  //az osztályhoz tartozó modell
+		// A modellben összeállítjuk a hír listát.
+		$retData = $hireklistaModel->get_data($vars);
+		//betöltjük a nézetet
+		$view = new View_Loader($this->baseName.'_main');
+		//átadjuk a lekérdezett adatokat a nézetnek
+		foreach($retData as $name => $value)
+			$view->assign($name, $value);
+	}
+}
+
+?>
